@@ -10,7 +10,7 @@ public class Carton {
 
     public Carton(int identificador, Persona persona) {
         this.identificador = identificador;
-        this.numero_tabla = new ArrayList<>();
+        this.numero_carton = new ArrayList<>();
         this.numeros_recibidos = new ArrayList<>();
         this.personaQueJuega = persona;
     }
@@ -36,7 +36,7 @@ public class Carton {
         HashSet<Integer> numerosUnicos = new HashSet<>();
         
         while (numerosUnicos.size() < 15) {
-            int num = random.nextInt(98) + 1; // Números aleatorios desde el 1 al 99
+            int num = random.nextInt(98) + 1; // Números aleatorios entre 1 y 8
             numerosUnicos.add(num);
         }
         

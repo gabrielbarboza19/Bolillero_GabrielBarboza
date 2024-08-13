@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class Carton {
     private int identificador;
-    private ArrayList<Integer> numero_tabla;
+    private ArrayList<Integer> numero_carton;
     private ArrayList<Integer> numeros_recibidos;
     private Persona personaQueJuega;
 
@@ -24,7 +24,7 @@ public class Carton {
     }
 
     public ArrayList<Integer> getNumeroCarton() {
-        return numero_tabla;
+        return numero_carton;
     }
 
     public ArrayList<Integer> getNumerosRecibidos() {
@@ -36,11 +36,11 @@ public class Carton {
         HashSet<Integer> numerosUnicos = new HashSet<>();
         
         while (numerosUnicos.size() < 15) {
-            int num = random.nextInt(100) + 1; // Números aleatorios entre 1 y 8
+            int num = random.nextInt(98) + 1; // Números aleatorios desde el 1 al 99
             numerosUnicos.add(num);
         }
         
-        numero_tabla.addAll(numerosUnicos);
+        numero_carton.addAll(numerosUnicos);
     }
 
     public void recibirNumero(int num) {

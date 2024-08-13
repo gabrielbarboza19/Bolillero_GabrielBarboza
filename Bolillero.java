@@ -14,7 +14,7 @@ public class Bolillero {
         HashSet<Integer> numerosUnicos = new HashSet<>();
         
         while (numerosUnicos.size() < 15) {
-            int num = random.nextInt(100) + 1; // Números aleatorios entre 1 y 100
+            int num = random.nextInt(98) + 1; // Números aleatorios entre 1 y 100
             numerosUnicos.add(num);
         }
         numeros_salidos.addAll(numerosUnicos);
@@ -43,8 +43,8 @@ public class Bolillero {
         if (!numeros_marcados.isEmpty()) {
             System.out.println("   * TABLA N°" + carton.getIdentificador() + " (Jugador: " + carton.getPersonaQueJuega().getNombre() + "):");
             System.out.println("");
-            System.out.println("       -Numeros de su tabla:   " + numero_carton);
-            System.out.println("       -Numeros que Marcó:     " + numeros_marcados + ".");
+            System.out.println("       -Números de su tabla:   " + numero_carton);
+            System.out.println("       -Números que Marcó:     " + numeros_marcados + ".");
             System.out.println("");
         }
 
@@ -57,7 +57,7 @@ public class Bolillero {
         }
 
         // Verifica si el jugador ganó la quinta
-        if (numeros_marcados.size() == 5) {
+        if (numeros_marcados.size() >= 5) {
             System.out.println("       -¡Felicidades " + carton.getPersonaQueJuega().getNombre() + "! ¡Ganaste la Quinta!");
         } else if (numeros_marcados.size() < 5) {
             int faltanQuinta = 5 - numeros_marcados.size();

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         // Crear objetos Persona
@@ -5,26 +7,32 @@ public class Main {
         Persona persona2 = new Persona("Roman Bellick");
         Persona persona3 = new Persona("Bruce Kibuttz");
 
-        // Instanciar 4 objetos de la clase Tabla y asociar cada uno a una persona
+        // Instanciar 3 objetos de la clase Carton y asociar cada uno a una persona
         Carton carton1 = new Carton(1, persona1);
         Carton carton2 = new Carton(2, persona2);
         Carton carton3 = new Carton(3, persona3);
         
-        // Llenar las tablas con números aleatorios
+        // Llenar los cartones con números aleatorios
         carton1.llenarNumeroCarton();
         carton2.llenarNumeroCarton();
         carton3.llenarNumeroCarton();
 
-        // Crear objeto Bolita y llenar su lista de números salidos
+        // Crear objeto Bolillero y llenar su lista de números salidos
         Bolillero bolillero = new Bolillero();
         bolillero.llenarNumerosSalidos();
 
-        // Mostrar los números de la bolita
+        // Mostrar los números de la bolilla
         bolillero.mostrarNumerosSalidos();
 
+        // Crear objeto Planilla y pasar el Bolillero y la lista de Cartones
+        ArrayList<Carton> cartones = new ArrayList<>();
+        cartones.add(carton1);
+        cartones.add(carton2);
+        cartones.add(carton3);
+
+        Planilla planilla = new Planilla(bolillero, cartones);
+
         // Verificar los números marcados en las tablas
-        bolillero.verificarNumeros(carton1);
-        bolillero.verificarNumeros(carton2);
-        bolillero.verificarNumeros(carton3);
+        planilla.verificarTodos();
     }
 }

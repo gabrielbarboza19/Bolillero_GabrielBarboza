@@ -24,11 +24,19 @@ public class Planilla {
         int cantidadNumeros = numero_carton.size();
 
         if (!numeros_marcados.isEmpty()) {
-            System.out.println("   * TABLA N°" + carton.getIdentificador() + " (Jugador: " + carton.getPersonaQueJuega().getNombre() + "):");
+            System.out.println("   * CARTON N°" + carton.getIdentificador() + " (Jugador: " + carton.getPersonaQueJuega().getNombre() + "):");
             System.out.println("");
             System.out.println("       -Números de su tabla:   " + numero_carton);
-            System.out.println("       -Números que Marcó:     " + numeros_marcados + ".");
+            System.out.println("       -Números que Marcó:     " + numeros_marcados);
             System.out.println("");
+        }else if(numeros_marcados.isEmpty()){
+
+            System.out.println("   * CARTON N°" + carton.getIdentificador() + " (Jugador: " + carton.getPersonaQueJuega().getNombre() + "):");
+            System.out.println("");
+            System.out.println("       -Números de su tabla:   " + numero_carton);
+            System.out.println("       -Números que Marcó:     [No marco ningúno]");
+            System.out.println("");
+
         }
 
         // Verifica si el jugador ganó la terna
@@ -49,7 +57,7 @@ public class Planilla {
 
         // Verifica si le falta un número para ganar
         if (numeros_marcados.size() == cantidadNumeros - 1) {
-            System.out.println("       -¡Estás a un número de ganar la lotería, " + carton.getPersonaQueJuega().getNombre() + "!");
+            System.out.println("       -¡Estás a un número de ganar la lotería " + carton.getPersonaQueJuega().getNombre() + "!");
         }
 
         System.out.println("");

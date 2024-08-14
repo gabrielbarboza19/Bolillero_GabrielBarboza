@@ -14,7 +14,7 @@ public class Bolillero {
         HashSet<Integer> numerosUnicos = new HashSet<>();
         
         while (numerosUnicos.size() < 15) {
-            int num = random.nextInt(98) + 1; // Números aleatorios entre 1 y 100
+            int num = random.nextInt(98) + 1; // Números aleatorios entre 1 y 99
             numerosUnicos.add(num);
         }
         numeros_salidos.addAll(numerosUnicos);

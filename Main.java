@@ -33,6 +33,6 @@ public class Main {
         Planilla planilla = new Planilla(bolillero, cartones);
 
         // Verificar los números marcados en las tablas
-        planilla.verificarTodos();
+        planilla.verificarTodosCarton();
     }
 }

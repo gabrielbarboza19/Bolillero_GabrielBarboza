@@ -10,7 +10,7 @@ public class Planilla {
         this.cartones = cartones;
     }
 
-    public void verificarNumeros(Carton carton) {
+    public void verificarCarton(Carton carton) {
         ArrayList<Integer> numeros_salidos = bolillero.getNumerosSalidos();
         ArrayList<Integer> numero_carton = carton.getNumeroCarton();
         ArrayList<Integer> numeros_marcados = new ArrayList<>();
@@ -76,9 +76,9 @@ public class Planilla {
         System.out.println("");
     }
 
-    public void verificarTodos() {
+    public void verificarTodosCarton() {
         for (Carton carton : cartones) {
-            verificarNumeros(carton);
+            verificarCarton(carton);
         }
     }
 }

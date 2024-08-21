@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         // Crear objetos Persona
-        Persona persona1 = new Persona("Niko Bellick");
-        Persona persona2 = new Persona("Roman Bellick");
+        Persona persona1 = new Persona("Niko Bellic");
+        Persona persona2 = new Persona("Roman Bellic");
         Persona persona3 = new Persona("Bruce Kibuttz");
 
         // Instanciar 3 objetos de la clase Carton y asociar cada uno a una persona

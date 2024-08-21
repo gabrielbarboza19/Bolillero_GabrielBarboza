@@ -30,13 +30,12 @@ public class Carton {
         HashSet<Integer> numerosUnicos = new HashSet<>();
         
         while (numerosUnicos.size() < 15) {
-            int num = random.nextInt(98) + 1; // Números aleatorios entre 1 y 8
+            int num = random.nextInt(98) + 1; // Números aleatorios entre 1 y 99
             numerosUnicos.add(num);
         }
         
         numero_carton.addAll(numerosUnicos);
     }
-
 
     public Persona getPersonaQueJuega() {
         return personaQueJuega;

@@ -21,14 +21,14 @@ public class Planilla {
             }
         }
 
-        int cantidadNumeros = numero_carton.size();
-
         if (!numeros_marcados.isEmpty()) {
+            
             System.out.println("   * CARTON N°" + carton.getIdentificador() + " (Jugador: " + carton.getPersonaQueJuega().getNombre() + "):");
             System.out.println("");
             System.out.println("       -Números de su tabla:   " + numero_carton);
             System.out.println("       -Números que Marcó:     " + numeros_marcados);
             System.out.println("");
+
         }else if(numeros_marcados.isEmpty()){
 
             System.out.println("   * CARTON N°" + carton.getIdentificador() + " (Jugador: " + carton.getPersonaQueJuega().getNombre() + "):");
@@ -39,30 +39,41 @@ public class Planilla {
 
         }
 
-        // Verifica si el jugador ganó la terna
+        verificarTerna(carton, numeros_marcados);
+        verificarQuinta(carton, numeros_marcados);
+        verificarFaltaUno(carton, numeros_marcados, numero_carton.size());
+        verificarLoteria(carton, numeros_marcados, numero_carton.size());
+        
+        System.out.println("");
+        System.out.println("------------------------------------------------------------------------------------------------------------");
+        System.out.println("");
+    }
+
+    private void verificarTerna(Carton carton, ArrayList<Integer> numeros_marcados) {
         if (numeros_marcados.size() >= 3) {
-            System.out.println("       -¡Felicidades " + carton.getPersonaQueJuega().getNombre() + "! ¡Ganaste la Terna!");
+            System.out.println("            -¡FELICIDADES " + carton.getPersonaQueJuega().getNombre() + "! ¡GANASTE LA TERNA!");
         } else {
             int faltanTerna = 3 - numeros_marcados.size();
-            System.out.println("       -Te faltan " + faltanTerna + " números para ganar la terna.");
+            System.out.println("            -Te faltan (" + faltanTerna + ") números para ganar la terna.");
         }
+    }
 
-        // Verifica si el jugador ganó la quinta
+    private void verificarQuinta(Carton carton, ArrayList<Integer> numeros_marcados) {
         if (numeros_marcados.size() >= 5) {
-            System.out.println("       -¡Felicidades " + carton.getPersonaQueJuega().getNombre() + "! ¡Ganaste la Quinta!");
-        } else if (numeros_marcados.size() < 5) {
+            System.out.println("            -¡FELICIDADES " + carton.getPersonaQueJuega().getNombre() + "! ¡GANASTE LA QUINTA!");
+        } else {
             int faltanQuinta = 5 - numeros_marcados.size();
-            System.out.println("       -Te faltan " + faltanQuinta + " números para ganar la quinta.");
+            System.out.println("            -Te faltan (" + faltanQuinta + ") números para ganar la quinta.");
         }
+    }
 
-        // Verifica si le falta un número para ganar
+    private void verificarFaltaUno(Carton carton, ArrayList<Integer> numeros_marcados, int cantidadNumeros) {
         if (numeros_marcados.size() == cantidadNumeros - 1) {
-            System.out.println("       -¡Estás a un número de ganar la lotería " + carton.getPersonaQueJuega().getNombre() + "!");
+            System.out.println("            -¡ESTÁS A (1) NÚMERO DE GANAR LA LOTERÍA " + carton.getPersonaQueJuega().getNombre() + "!");
         }
+    }
 
-        System.out.println("");
-
-        // Verifica si el jugador ha ganado la lotería
+    private void verificarLoteria(Carton carton, ArrayList<Integer> numeros_marcados, int cantidadNumeros) {
         if (numeros_marcados.size() == cantidadNumeros) {
             System.out.println("   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
             System.out.println("");
@@ -72,8 +83,6 @@ public class Planilla {
             System.out.println("   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
             System.out.println("");
         }
-        System.out.println("------------------------------------------------------------------------------------------------------------");
-        System.out.println("");
     }
 
     public void verificarTodosCarton() {
